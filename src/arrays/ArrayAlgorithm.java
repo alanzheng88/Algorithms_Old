@@ -12,7 +12,9 @@ public class ArrayAlgorithm {
 			return -1;
 		}
 		
-		if (elements[elements.length - 1] > elements[0]) {
+		boolean hasOnlyOneElement = elements.length == 1;
+		boolean isSortedInAscendingOrder = elements[elements.length - 1] > elements[0];
+		if (hasOnlyOneElement || isSortedInAscendingOrder) {
 			// array is already sorted in ascending order
 			return 0;
 		}
@@ -48,7 +50,9 @@ public class ArrayAlgorithm {
 			throw new Exception(EXCEPTION_MESSAGE);
 		}
 		
-		if (elements[0] < elements[elements.length - 1]) {
+		boolean hasOnlyOneElement = elements.length == 1;
+		boolean isSortedInAscendingOrder = elements[elements.length - 1] > elements[0];
+		if (hasOnlyOneElement || isSortedInAscendingOrder) {
 			return elements[0];
 		}
 		

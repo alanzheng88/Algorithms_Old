@@ -81,4 +81,18 @@ public class ArrayAlgorithmFindMinElementTest {
 		int result = ArrayAlgorithm.findMinElementFromSortedRotatedArrayOptimized(elements);
 		assertEquals(0, result);
 	}
+	
+	@Test
+	public void testArrayWithOneElement() throws Exception {
+		int[] elements = {2};
+		int result = ArrayAlgorithm.findMinElementFromSortedRotatedArray(elements);
+		assertEquals(2, result);
+	}
+	
+	@Test
+	public void testArrayWithOneElementOptimized() throws Exception {
+		int[] elements = {2};
+		int result = ArrayAlgorithm.findMinElementFromSortedRotatedArrayOptimized(elements);
+		assertEquals(2, result);
+	}
 }
