@@ -109,5 +109,13 @@ public class MyStringTest {
 		boolean result = MyString.isAnagram(a, b);
 		assertEquals(true, result);
 	}
+	
+	@Test
+	public void testInvalidAnagramShouldReturnFalse() {
+		String a = "alnhe";
+		String b = "hlnhe";
+		boolean result = MyString.isAnagram(a, b);
+		assertEquals(false, result);
+	}
 
 }
