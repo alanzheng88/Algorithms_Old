@@ -2,79 +2,79 @@ package strings;
 
 import org.junit.Test;
 
-import strings.MyString;
+import strings.StringAlgorithm;
 
 import static org.junit.Assert.*;
 
-public class MyStringTest {
+public class StringAlgorithmTest {
 	
 	@Test
 	public void testHasUniqueCharactersShouldReturnTrue() {
 		String s = "abcdefghijkl";
-		boolean result = MyString.hasUniqueCharactersWithDs(s);
+		boolean result = StringAlgorithm.hasUniqueCharactersWithDs(s);
 		assertEquals(true, result);
 	}
 	
 	@Test
 	public void testHasUniqueCharactersOptimizedShouldReturnTrue() {
 		String s = "abcdefghijkl";
-		boolean result = MyString.hasUniqueCharactersWithoutDs(s);
+		boolean result = StringAlgorithm.hasUniqueCharactersWithoutDs(s);
 		assertEquals(true, result);
 	}
 	
 	@Test
 	public void testHasNonUniqueCharactersShouldReturnFalse() {
 		String s = "abcdefghhijkl";
-		boolean result = MyString.hasUniqueCharactersWithDs(s);
+		boolean result = StringAlgorithm.hasUniqueCharactersWithDs(s);
 		assertEquals(false, result);
 	}
 	
 	@Test
 	public void testHasNonUniqueCharactersOptimizedShouldReturnFalse() {
 		String s = "abcdefghhijkl";
-		boolean result = MyString.hasUniqueCharactersWithoutDs(s);
+		boolean result = StringAlgorithm.hasUniqueCharactersWithoutDs(s);
 		assertEquals(false, result);
 	}
 	
 	@Test
 	public void testReverseCStringShouldReturnReverseStringWithNullTerminator() {
 		String s = "abcd\0";
-		String result = MyString.reverseString(s);
+		String result = StringAlgorithm.reverseString(s);
 		assertEquals("dcba\0", result);
 	}
 	
 	@Test
 	public void testReverseRegularStringShouldReturnReverseString() {
 		String s = "abcd";
-		String result = MyString.reverseString(s);
+		String result = StringAlgorithm.reverseString(s);
 		assertEquals("dcba", result);
 	}
 	
 	@Test
 	public void testReverseEmptyStringShouldReturnEmptyString() {
 		String s = "";
-		String result = MyString.reverseString(s);
+		String result = StringAlgorithm.reverseString(s);
 		assertEquals("", result);
 	}
 	
 	@Test
 	public void testRemoveDuplicateCharactersShouldReturnStringWithNoDuplicates() {
 		String s = "aabbbccccddd";
-		String result = MyString.removeDuplicateCharacters(s);
+		String result = StringAlgorithm.removeDuplicateCharacters(s);
 		assertEquals("abcd", result);
 	}
 	
 	@Test
 	public void testRemoveStringWithNoDuplicateCharactersShouldReturnOriginalString() {
 		String s = "abcd";
-		String result = MyString.removeDuplicateCharacters(s);
+		String result = StringAlgorithm.removeDuplicateCharacters(s);
 		assertEquals("abcd", result);
 	}
 	
 	@Test
 	public void testRemoveEmptyStringShouldReturnEmptyString() {
 		String s = "";
-		String result = MyString.removeDuplicateCharacters(s);
+		String result = StringAlgorithm.removeDuplicateCharacters(s);
 		assertEquals("", result);
 	}
 	
@@ -82,7 +82,7 @@ public class MyStringTest {
 	public void testIsAnagramWithStringOfSameLengthShouldReturnTrue() {
 		String a = "alnzhe";
 		String b = "nlahze";
-		boolean result = MyString.isAnagram(a, b);
+		boolean result = StringAlgorithm.isAnagram(a, b);
 		assertEquals(true, result);
 	}
 	
@@ -90,7 +90,7 @@ public class MyStringTest {
 	public void testIsAnagramWithStringOfDifferentLengthShouldReturnFalse() {
 		String a = "alnhe";
 		String b = "nlahzed";
-		boolean result = MyString.isAnagram(a, b);
+		boolean result = StringAlgorithm.isAnagram(a, b);
 		assertEquals(false, result);
 	}
 	
@@ -98,7 +98,7 @@ public class MyStringTest {
 	public void testIsAnagramWithSameCharactersOfMixedCasesShouldReturnTrue() {
 		String a = "alnhe";
 		String b = "hEnAL";
-		boolean result = MyString.isAnagram(a, b);
+		boolean result = StringAlgorithm.isAnagram(a, b);
 		assertEquals(true, result);
 	}
 	
@@ -106,7 +106,7 @@ public class MyStringTest {
 	public void testEmptyAnagramShouldReturnTrue() {
 		String a = "";
 		String b = "";
-		boolean result = MyString.isAnagram(a, b);
+		boolean result = StringAlgorithm.isAnagram(a, b);
 		assertEquals(true, result);
 	}
 	
@@ -114,8 +114,14 @@ public class MyStringTest {
 	public void testInvalidAnagramShouldReturnFalse() {
 		String a = "alnhe";
 		String b = "hlnhe";
-		boolean result = MyString.isAnagram(a, b);
+		boolean result = StringAlgorithm.isAnagram(a, b);
 		assertEquals(false, result);
+	}
+	
+	@Test
+	public void testPermutation() {
+		String a = "alanz";
+		StringAlgorithm.countPermutations(a);
 	}
 
 }

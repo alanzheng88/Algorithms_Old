@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Arrays;
 
-public class MyString {
+public class StringAlgorithm {
 
 	/*
 	 * O(N) implementation with data structures
@@ -94,6 +94,19 @@ public class MyString {
  		return Arrays.equals(aAlphabets, bAlphabets);
 	}
 	
+	private static void permutation(String str, String prefix) {
+		if (str.length() == 0) {
+			System.out.println(prefix);
+		} else {
+			for (int i = 0; i < str.length(); i++) {
+				String rem = str.substring(0, i) + str.substring(i + 1);
+				permutation(rem, prefix + str.charAt(i));
+			}
+		}
+	}
 	
+	public static void countPermutations(String str) {
+		permutation(str, "");
+	}
 
 }
